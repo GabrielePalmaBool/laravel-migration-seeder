@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('stazione_arrivo',100) ->unique();
             $table->dateTime('orario_partenza') ->unique();
             $table->dateTime('orario_arrivo') ->unique();
-            $table->string('codice_treno',10);
+            $table->string('codice_treno',11)->unique();
             $table->tinyInteger('num_carrozze') ->nullable(false);
             $table->boolean('in_orario') ->default(true);
             $table->boolean('cancellato') ->default(false);

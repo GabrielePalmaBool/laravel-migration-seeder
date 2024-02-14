@@ -10,7 +10,9 @@ class MainController extends Controller
 {
     public function index() {
 
-        $trains = Train::all();
+        $trains = Train::whereDate('orario_partenza', '=', now()->toDateString())->get();
+
+        //$trains = Train::all();
 
         return view('pages.index', compact('trains'));
     }
